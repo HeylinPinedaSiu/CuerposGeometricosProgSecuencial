@@ -4,25 +4,41 @@ public class Prisma {
      Scanner lector = new Scanner(System.in);
       
          //Declaramos las variables del prisma
-        double base;
-        double area;
+       int longlados; 
+       int lados;
         double altura;
+        double areaLateral;
+         double areaTotal;
+         double volumen;
+         double perimetroBase;
+         double areaBase;
+         double apotema;
 
-        //double volumen;
        //Pedimos los datos de entrada
-       System.out.println("Ingrese la base del prisma: ");
-       base = lector.nextDoubl  e();
-  
-       System.out.println("Ingrese el area el prisma: ");
-       area = lector.nextDouble();
-
+       System.out.println("Ingrese la cantidad de lados del prisma");
+        lados =lector.nextInt();
 
        System.out.println("Ingrese la altura del prisma: ");
        altura = lector.nextDouble();
+  
+       System.out.println("Ingrese la longitud de lados  del prisma: ");
+       longlados = lector.nextInt();
 
        //Hacemos las operaciones 
-        //volumen = base *  area * altura /2;
-        System.out.println( "El volumen de un prisma es: " + base * area * altura /2 );
+       
+       perimetroBase = lados * longlados;
+       areaLateral = perimetroBase * altura;
+       double alfa = (Math.PI/180) * (360/lados);
+       apotema = longlados / (2 * Math.tan((alfa)/2));
+       areaBase = (perimetroBase * apotema)/2;
+       areaTotal = areaLateral + 2 * areaBase;
+       volumen = areaBase * altura;
+
+       //mostramos en pantalla los resultados
+       System.out.println("Area lateral: " + areaLateral);
+       System.out.println("Area total: " + areaTotal);
+       System.out.println("Volumen: " + volumen);
+
         lector.close();
 
     }
