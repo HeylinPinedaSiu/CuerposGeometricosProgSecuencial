@@ -14,7 +14,6 @@ public class HuesoEsfericoYCuñaEsferica{
        //pedimos los datos al usuario 
        System.out.print("Ingrese el valor del radio: ");
        radio = lector.nextDouble();
-	    
        System.out.print("ingrese el valor del angulo: ");
        angulo = lector.nextInt();
 
