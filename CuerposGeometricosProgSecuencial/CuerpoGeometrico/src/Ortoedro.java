@@ -1,42 +1,39 @@
 import java.util.Scanner;
-public class Ortoedro {
-    public static void main(String[] args) throws Exception {
-        Scanner lector = new Scanner(System.in);
 
-          //declaracion de variable
-	 double area;
-      double  base;
-      double  cara;
-      double Area_1;
-      double diagonal;
-      double vertice;
-      
-	//solicitar las variables
-	System.out.println("Ingrese el valor de la longitud: ");
-	area = lector.nextDouble();
+public class Ortoedro{
 
-	System.out.println("Ingrese el valor del ancho: ");
-	base = lector.nextDouble();
+    public static void main(String [] args){
+    Scanner lector = new Scanner(System.in);
 
-	 System.out.println("Ingrese el valor de la altura: ");
-	cara = lector.nextDouble();
+	//declaramos las variables 
+     double e;
+	 double f;
+	 double W;
+     double area;
+	 double volumen;
+	 double diagonal;
 
+	 //pedimos los datos al usuario 
+     System.out.print("Ingrese el valor de e: ");
+     e =lector.nextDouble();
+     System.out.print("Ingrese el valor de f: ");
+     f =lector.nextDouble();
+     System.out.print("Ingrese el valor de W: ");
+     W =lector.nextDouble();
 
-	//Proceso angulo diedro
-	Area_1 = 2 * (area * base + area * cara + base * cara);
+	 //procesamos los datos 
+     area = 2*(e*f+e*W+f*W);
+     diagonal = Math.sqrt((e*e)+(f*f)+(W*W));
+     volumen = e*f*W;
 
-	//diagonal
-	diagonal = Math.sqrt(area * area + base * base + cara * cara);
-    
-	//vertice
-	vertice = area * base * cara;
+	 //mostramos en pantalla los resultados 
+     System.out.println("El valor del area es: "+area);
+     System.out.println("El valor del volumen es: "+volumen);
+     System.out.println("El valor de la diagonal es: "+diagonal);
+     
+     lector.close();
 
-	//resultado
-	System.out.println("El angulo diedro es: "+ Area_1);
-	System.out.println("la diagonal es: "+diagonal);
-	System.out.println("el vertice es: "+vertice);
-    
-    lector.close();  
-    
+ }
+
 }
-}
+ 
