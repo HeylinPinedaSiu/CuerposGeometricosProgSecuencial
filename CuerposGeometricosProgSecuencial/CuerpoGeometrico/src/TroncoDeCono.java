@@ -1,49 +1,45 @@
 import java.util.Scanner;
-public class TroncoDeCono {
 
-    public static void main(String[] args) throws Exception {
-        Scanner lector = new Scanner(System.in);
+public class TroncoDeCono{
 
-    //declaracion de variables
-	double altura;
-   double  generatriz;
-    double  Radio1;
-    double radio;
+    public static void main(String [] args){
+    Scanner lector = new Scanner(System.in);
 
-    double volumen;
-    double  Area_B1;    
-    double  Arealateral;
-    double  Areatotal;
-    double  Area_b;
-	
-	//solicitar las variables
-    System.out.println("ingrese el valor de la radio menor: ");
-	 radio = lector.nextDouble();
-	System.out.println("ingrese el valor de la radio mayor: " );
-	Radio1 = lector.nextDouble();
-	System.out.println("ingrese el valor de la altura: ");
-	altura = lector.nextDouble();
-	
-	//operaciones
-    //Area lateral
-    
-	generatriz = radio + Radio1;
-	Arealateral =    Math.PI * generatriz * (radio + Radio1);
+	//declaramos las variables 
+    double AreaLateral;
+	double  areaTotal;
+	double  volumen;
+	double areaBase;
+	double areab;
+    double altura;
+	double radio;
+	double radioM;
+	double generatriz;
 
-	//area total
-	Area_B1 = 2 * Math.PI * Radio1;
-	Area_b = 2 * Math.PI * radio;
-	Areatotal = Arealateral + Area_B1 + Area_b;
 
-	//volumen
-	volumen = (Math.PI * altura * ((Radio1 * Radio1) + (radio * radio) + (Radio1 + radio))) / 3;
-	
-	//resultado
-	System.out.println ("El Area Lateral del tronco de cono es: "+Arealateral);
-	System.out.println("El Area Total del tronco de cono es: "+ Areatotal);
-	System.out.println("El Volumen del tronco de cono es: "+ volumen);
+	//pedimos los datos al usuario 
+    System.out.print("Ingrese la altura: ");
+    altura = lector.nextDouble();
+    System.out.print("Ingrese el radio menor: ");
+    radio = lector.nextDouble();
+    System.out.print("Ingrese el radio Mayor: ");
+    radioM = lector.nextDouble();
 
-    lector.close();
-    
-}
+	//hacemos las operaciones 
+    generatriz = Math.sqrt((altura*altura)+(radioM*radioM-radio*radio));
+    AreaLateral = Math.PI*generatriz*(radioM+radio);
+    areaBase = Math.PI*radioM;
+    areab = Math.PI*radio;
+    areaTotal = AreaLateral + areaBase + areab;
+    volumen = 1.0/3*Math.PI*altura*((radioM*radioM)+(radio*radio)+radioM*radio);
+
+		//mostramos los resultados 
+      System.out.println("El area lateral es: "+AreaLateral);
+      System.out.println("El area total es: "+ areaTotal );
+      System.out.println("El volumen es: "+volumen);
+
+      lector.close();
+ 
+ }
+
 }
