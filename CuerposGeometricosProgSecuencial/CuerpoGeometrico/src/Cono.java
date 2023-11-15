@@ -29,12 +29,6 @@ public class Cono {
      Volumen = areaBase*altura/3;
  
 
-     //mandamos a imprimir los resultados
-      System.out.println("El area base es: " + areaBase);
-     System.out.println("El area Lateral es: " + areaLateral);
-     System.out.println("El area Total es: " + areaTotal);
-     System.out.println("El volumen es: " + Volumen);
-
      //mostramos los datos 
      System.out.println("El area lateral el cono es: "+ areaLateral);
      System.out.println("El area total del cono es: "+ areaTotal);
