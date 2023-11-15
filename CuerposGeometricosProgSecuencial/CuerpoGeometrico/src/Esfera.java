@@ -12,9 +12,11 @@ public class Esfera {
              System.out.println("Ingresa el radio de la Esfera: ");
              radio = lector.nextDouble();
  
+             //hacemos las operaciones 
             area = 4 * (3.1416) * Math.pow(radio, 2);
             volumen = (3.1416) * Math.pow(radio, 3);
  
+            //mostramos los resultados 
             System.out.println("El area de la Esfera es: " +area);
             System.out.println("El volumen de una esfera es: "+volumen);
  
