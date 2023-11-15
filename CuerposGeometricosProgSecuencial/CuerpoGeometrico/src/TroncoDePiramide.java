@@ -1,53 +1,49 @@
 import java.util.Scanner;
+
 public class TroncoDePiramide{
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String [] args){
         Scanner lector = new Scanner(System.in);
 
-    //declaracion de variables
-    double Al;
-    double Areatotal;
-    double  Volumen;
-     double  Perimetro_B1;
-     double  Perimetro_b;
-     double  Area_p1;
-    double  Area_B1;
-     double  Area_b;
-     double  altura;
-     double  lateral;
-     double  Latera_1;
-     double  apot;
- 
-     //solicitar las variables
-     System.out.println("Digite la altura del Tronco de Piramide: ");
-      altura = lector.nextDouble();
- 
-     System.out.println("Digite la longitud del lado menor del Tronco de Piramide: ");
-      lateral = lector.nextDouble();
- 
-      System.out.println("Digite la longitud del lado mayor del Tronco de Piramide: ");
-    Latera_1 = lector.nextDouble();
-  
- 
-    // operacones area lateral
-     apot = (Latera_1 - lateral) / 2;
-     Area_p1 = Math.sqrt(apot * apot + altura * altura);
-     Perimetro_B1 = (Latera_1 * altura) / 2;
-    Perimetro_b = (lateral * altura) / 2;
-     Al = ((Perimetro_B1 + Perimetro_b) / 2) * Area_p1;
- 
-    //area total
-    Area_B1 = 4 * lateral;
-    Area_b = 4 * Latera_1;
-      Areatotal = Al + Area_B1 + Area_b;
- 
-    //volumen
-    Volumen = (altura * ( Area_B1 + Area_b + Math.sqrt(Area_B1 * Area_b))) / 3;
- 
-     //resultado
-    System.out.println("El Area Lateral del tronco de piramide es: "+ Al);
-     System.out.println("El Area Total del tronco de piramide es: "+ Areatotal);
-     System.out.println("El volumen del tronco de piramide es: "+ Volumen);
-     lector.close();
-}
+      //Declaramos las variables 
+        double areaLateral;
+        double areaTotal;
+        double PerimetroBase;
+        double Pb;
+        double e;
+        double AreaBase;
+        double Areabase;
+        double altura;
+        double volumen;
+        double AristaM;
+        double AristaMenor;
+        double W;
+        
+        //pedimos los datos al usuario 
+        System.out.print("Ingrese la longitud de la arista mayor: ");
+        AristaM= lector.nextDouble();
+        System.out.print("Ingrese la longitud de la arista menor: ");
+        AristaMenor = lector.nextDouble();
+        System.out.print("Ingresa el valor de la altura: ");
+        altura = lector.nextDouble();
+
+        //hacemos las operaciones
+        W= (AristaM-AristaM)/2;
+        e = Math.sqrt((altura*altura)+(W*W));
+        PerimetroBase = AristaM*altura; 
+        Pb = AristaMenor*altura;
+        areaLateral = (PerimetroBase+Pb)/2*e;
+        AreaBase = (AristaM*AristaM);
+        Areabase = (AristaMenor*AristaMenor);
+        areaTotal= areaLateral+AreaBase+Areabase;
+        volumen = 1.0/3*altura*(AreaBase+Areabase+Math.sqrt(AreaBase*Areabase));
+
+        //mostramos los resultados 
+        System.out.println("El area lateral es igual a: "+areaLateral);
+        System.out.println("El area total es igual a: "+areaTotal);
+        System.out.println("El volumen es igual a: "+volumen);
+
+       lector.close();
+
+    }
 }
