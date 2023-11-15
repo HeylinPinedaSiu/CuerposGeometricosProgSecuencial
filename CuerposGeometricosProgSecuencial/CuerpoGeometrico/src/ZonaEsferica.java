@@ -5,33 +5,29 @@ public class ZonaEsferica {
 
          //Declaramos las variables
 
-        double radio;
-        double radio_zf;
+        double radio;   
        double Area;
         double altura;
-       double volumen;
-       //double base;
+       double Volumen;
+         double RadioM;
 
-       //pedimos ls datos de entrada
+       //pedimos los datos de entrada
        System.out.println("Ingrese la altura: ");
        altura = lector.nextDouble();
 
-       System.out.println("Ingrese el radio : ");
-       radio = lector.nextDouble();
+       System.out.println("Ingrese el radio  mayor: ");
+       RadioM = lector.nextDouble();
+
+       System.out.println("Ingrese el rado menor");
+       radio = lector.nextInt();
 
        
-
-       //radio  de la zona esferica
-       radio = altura;
-       radio_zf = (radio * radio + altura * altura ) / (2 * altura);
-       Area = 2 * Math.PI  *altura * altura;
-
-       //volumen de la zona esferica
-       volumen  = (Math.PI * (altura * altura )) * ((3 * radio ) - altura);
+       Area = 2*Math.PI*RadioM*altura;
+       Volumen  = Math.PI*altura*((altura*altura)+3*RadioM+3*radio)/6;
        
        //resultados de la zona esferica
        System.out.println("El area de la zona esferica es: " +Area);
-       System.out.println("El volumen de la zona esferica es: " +volumen);
+       System.out.println("El volumen de la zona esferica es: " +Volumen);
 
       lector.close();
 }
